@@ -1,0 +1,12 @@
+{
+  "version": 3,
+  "file": "bundle.css",
+  "sources": [
+    "..\\src\\components\\Navbar.svelte"
+  ],
+  "sourcesContent": [
+    "<div>\r\n    <ul>\r\n    {#if !user.isAuth }\r\n        <li>\r\n            <a href=\"#\">Login</a>\r\n        </li>\r\n    {:else}\r\n        <li>\r\n            <a href=\"#\">Dashboard</a>\r\n        </li>\r\n        <li>\r\n            <a href=\"#\">Profile</a>\r\n        </li>\r\n        <li>\r\n            <a href=\"#\">Logout</a>\r\n        </li>\r\n\r\n\r\n    {/if}\r\n    </ul>\r\n</div>\r\n\r\n<style>\r\ndiv {\r\n    height: 20px;\r\n    padding: 10px 15px;\r\n    background-color: #7952B3;\r\n}\r\n\r\nul {\r\n    padding: 0;\r\n    list-style: none;\r\n    margin: auto 0 auto auto;\r\n}\r\n\r\nli {\r\n    display: inline-block;\r\n    margin: 0;\r\n    padding-left: 15px;\r\n}\r\n\r\na {\r\n    color: white;\r\n}\r\n\r\n.active {\r\n    font-weight: bold;\r\n}\r\n</style>\r\n\r\n<script>\r\nexport let user = {};\r\n</script>"
+  ],
+  "names": [],
+  "mappings": "AAuBA,GAAG,cAAC,CAAC,AACD,MAAM,CAAE,IAAI,CACZ,OAAO,CAAE,IAAI,CAAC,IAAI,CAClB,gBAAgB,CAAE,OAAO,AAC7B,CAAC,AAED,EAAE,cAAC,CAAC,AACA,OAAO,CAAE,CAAC,CACV,UAAU,CAAE,IAAI,CAChB,MAAM,CAAE,IAAI,CAAC,CAAC,CAAC,IAAI,CAAC,IAAI,AAC5B,CAAC,AAED,EAAE,cAAC,CAAC,AACA,OAAO,CAAE,YAAY,CACrB,MAAM,CAAE,CAAC,CACT,YAAY,CAAE,IAAI,AACtB,CAAC,AAED,CAAC,cAAC,CAAC,AACC,KAAK,CAAE,KAAK,AAChB,CAAC"
+}

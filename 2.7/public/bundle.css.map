@@ -1,0 +1,16 @@
+{
+  "version": 3,
+  "file": "bundle.css",
+  "sources": [
+    "..\\src\\components\\Navbar.svelte",
+    "..\\src\\components\\NavLink.svelte",
+    "..\\src\\components\\Navlink.svelte"
+  ],
+  "sourcesContent": [
+    "<div>\r\n    <ul>\r\n    {#if !user.isAuth }\r\n        <li>\r\n            <a href=\"#\">Login</a>\r\n        </li>\r\n    {:else}\r\n        <li>\r\n            <Navlink\r\n                href={'#'}\r\n                text={'Dashboard'}\r\n                active={current === 'Dashboard'}\r\n                on:activate={changeCurrent}\r\n            />\r\n        </li>\r\n        <li>\r\n            <Navlink\r\n                href={'#'}\r\n                text={'Profile'}\r\n                active={current === 'Profile'}\r\n                on:activate={changeCurrent}\r\n            />\r\n        </li>\r\n        <li>\r\n            <Navlink\r\n                href={'#'}\r\n                text={'Logout'}\r\n                active={current === 'Logout'}\r\n                on:activate={changeCurrent}\r\n            />\r\n        </li>\r\n\r\n\r\n    {/if}\r\n    </ul>\r\n</div>\r\n\r\n<style>\r\ndiv {\r\n    height: 20px;\r\n    padding: 10px 15px;\r\n    background-color: #7952B3;\r\n}\r\n\r\nul {\r\n    padding: 0;\r\n    list-style: none;\r\n    margin: auto 0 auto auto;\r\n}\r\n\r\nli {\r\n    display: inline-block;\r\n    margin: 0;\r\n    padding-left: 15px;\r\n}\r\n</style>\r\n\r\n<script>\r\nimport Navlink from './Navlink.svelte';\r\nexport let user = {};\r\n\r\nlet current = 'Dashboard';\r\n\r\nfunction changeCurrent(event) {\r\n    current = event.detail.text;\r\n}\r\n</script>",
+    "<a class:active href={href} on:click|preventDefault={handleClick}>{text}</a>\r\n\r\n<style>\r\na {\r\n    color: white;\r\n}\r\n\r\n.active {\r\n    font-weight: bold;\r\n}\r\n</style>\r\n\r\n<script>\r\nimport { createEventDispatcher } from 'svelte';\r\nexport let href = '#';\r\nexport let text = '';\r\nexport let active = false;\r\n\r\nlet dispatch = createEventDispatcher();\r\n\r\nfunction handleClick() {\r\n    dispatch('activate', {\r\n        text\r\n    });\r\n}\r\n</script>",
+    "<a \r\n    href={href}\r\n    class:active\r\n    on:click|preventDefault={handleClick}\r\n>{text}</a>\r\n\r\n\r\n<style>\r\na {\r\n    color: white;\r\n}\r\n\r\n.active {\r\n    font-weight: bold;\r\n}\r\n</style>\r\n\r\n<script>\r\nexport let href= '#';\r\nexport let text = '';\r\nexport let active = false;\r\n\r\nimport { createEventDispatcher } from 'svelte';\r\n\r\nlet dispatch = createEventDispatcher();\r\n\r\nfunction handleClick() {\r\n    dispatch('activate', {\r\n        text\r\n    });\r\n}\r\n</script>"
+  ],
+  "names": [],
+  "mappings": "AAsCA,GAAG,eAAC,CAAC,AACD,MAAM,CAAE,IAAI,CACZ,OAAO,CAAE,IAAI,CAAC,IAAI,CAClB,gBAAgB,CAAE,OAAO,AAC7B,CAAC,AAED,EAAE,eAAC,CAAC,AACA,OAAO,CAAE,CAAC,CACV,UAAU,CAAE,IAAI,CAChB,MAAM,CAAE,IAAI,CAAC,CAAC,CAAC,IAAI,CAAC,IAAI,AAC5B,CAAC,AAED,EAAE,eAAC,CAAC,AACA,OAAO,CAAE,YAAY,CACrB,MAAM,CAAE,CAAC,CACT,YAAY,CAAE,IAAI,AACtB,CAAC;ACnDD,CAAC,cAAC,CAAC,AACC,KAAK,CAAE,KAAK,AAChB,CAAC,AAED,OAAO,cAAC,CAAC,AACL,WAAW,CAAE,IAAI,AACrB,CAAC;ACDD,CAAC,cAAC,CAAC,AACC,KAAK,CAAE,KAAK,AAChB,CAAC,AAED,OAAO,cAAC,CAAC,AACL,WAAW,CAAE,IAAI,AACrB,CAAC"
+}

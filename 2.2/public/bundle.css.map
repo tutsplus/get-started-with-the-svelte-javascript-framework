@@ -1,0 +1,12 @@
+{
+  "version": 3,
+  "file": "bundle.css",
+  "sources": [
+    "..\\src\\App.svelte"
+  ],
+  "sourcesContent": [
+    "<script>\n\timport HelloForm from './components/HelloForm.svelte';\n\texport let name;\n</script>\n\n<style>\n\th1 {\n\t\tcolor: purple;\n\t}\n</style>\n\n\n<h1>Hello {name}!</h1>\n<HelloForm />\n"
+  ],
+  "names": [],
+  "mappings": "AAMC,EAAE,cAAC,CAAC,AACH,KAAK,CAAE,MAAM,AACd,CAAC"
+}
